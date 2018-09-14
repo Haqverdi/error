@@ -75,8 +75,8 @@ function error (opts) {
             ctx: ctx,
             request: ctx.request,
             response: ctx.response,
-            error: err.message,
-            stack: err.stack,
+            error: env === 'development' ? err.message : '',
+            stack: env === 'development' ? err.stack : '',
             status: ctx.status,
             code: err.code
           })
